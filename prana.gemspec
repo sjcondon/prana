@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sarah Condon"]
   spec.email         = ["s.j.condon01@gmail.com"]
 
-  spec.summary       = %q{discounted womens clothing with best reviews}
-  spec.description   = %q{discounted womens clothing}
-  spec.homepage      = "https://www.prana.com"
+  spec.summary       = %q{petzl gear}
+  spec.description   = %q{petzl website with gear}
+  spec.homepage      = "https://www.petzl.com"
   spec.license       = "MIT"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"

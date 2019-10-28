@@ -1,6 +1,6 @@
 require "prana/version"
 require_relative './prana/cli'
-require_relative './prana/discounts'
+require_relative './prana/gear'
 require_relative './prana/scraper'
 require "pry"
 require "nokogiri"
