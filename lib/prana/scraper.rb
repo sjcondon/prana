@@ -1,0 +1,2 @@
+class Prana::Scraper
+end

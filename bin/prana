@@ -1,3 +1,0 @@
-#!/usr/bin/env ruby
-require './lib/environment'
-prana::CLI.new.call

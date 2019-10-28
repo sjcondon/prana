@@ -1,0 +1,2 @@
+class Prana::Discounts
+end
