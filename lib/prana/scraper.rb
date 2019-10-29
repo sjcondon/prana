@@ -6,7 +6,8 @@ class Prana::Scraper
    gear.each_with_index do |clothes,index|
       name = clothes.css(".link")[index].children.text
       price = clothes.css("span.value.discounted")[index].children.text
-      url =
+      url = clothes.css("a").attribute("href").value
+      binding.pry
       Prana::Gear.new(name,price,url)
       binding.pry
    end
