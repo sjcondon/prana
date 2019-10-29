@@ -1,15 +1,15 @@
 class Prana::Scraper
    def self.scrapes_discounts 
-    html = open("https://www.prana.com/sale/womens-sale.html#prefv1=5%20Stars&prefn1=reviewRating&pos=0")
+    html = open("https://www.prana.com/sale/womens-sale.html?prefn1=reviewRating&pmpt=discounted&prefv1=5%20Stars&pmid=dynamic-category-promotion-sale#pos=1&prefv1=5%20Stars&prefn1=reviewRating")
     doc = Nokogiri::HTML(html)
-   gear = doc.css("div.col-6 col-lg-4 col-xl-3 js-grid-tile")
-   gear.each_with_index do |clothes,index|
-      name = clothes.css(".link")[index].children.text
-      price = clothes.css("span.value.discounted")[index].children.text
-      url = clothes.css("a").attribute("href").value
-      binding.pry
-      Prana::Gear.new(name,price,url)
-      binding.pry
+      clothing = doc.css("div.col-xl-80-percent div.js-grid-tile")
+      clothing.each_with_index do |clothes,index|
+         name = clothes.css(".link")[index].children.text
+         price = clothes.css("span.value.discounted").text
+         url = clothes.css("a").attribute("href").value
+         binding.pry
+         Prana::Clothing.new(name,price,url)
+
+      end
    end
-end
 end
