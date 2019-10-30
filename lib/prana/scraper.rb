@@ -8,6 +8,8 @@ class Prana::Scraper
          name = clothes.css(".link").children.text.gsub("View Product Details", "")
          price = clothes.css("span.value.discounted").text
          url = clothes.css("a").attribute("href").value
+         product = clothes.css("div.product__details__description mb-4").text
+         binding.pry
          Prana::Clothing.new(name,price,url)
          
 

@@ -11,27 +11,31 @@ class Prana::CLI
     #names methods
     def start         
         list_clothing
+        collect_clothing
         product_discription
         do_next
     end    
     
     def list_clothing
         puts "Choose the clothing you would like to view."
-        @clothing.each.with_index(1) do |clothing,index| #iterates via clothing array
+        @clothing.each.with_index(1) do |clothing,index| 
+            #.with_index makes it start at "1"
+            #iterates via clothing array
             puts "#{index}. #{clothing.name}" #lists all of the clothings
         end
     end
     
-    def product_discription
+    def collect_clothing
         chosen_number = gets.strip.to_i
-        show_clothing_for(chosen_number) if valid_input(chosen_number, @clothing) #taking from the show_clothing method
+        show_clothing(chosen_number) if valid_input(chosen_number, @clothing) #taking from the show_clothing method
     end
-
+    def product_discription
+    end
     def valid_input(input,data)
-        input.to_i <= data.length && input.to_i > 0
+        input.to_i <= data.length && input.to_i > 0 #input to iterate the data length input which is > 0
     end
 
-    def show_clothing_for(chosen_number)
+    def show_clothing(chosen_number)
         clothing = @clothing[chosen_number -1]
         puts "Here is your clothing for the #{clothing.name}..."
         puts "#{clothing.price}"
