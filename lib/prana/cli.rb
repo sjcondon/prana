@@ -24,15 +24,8 @@ class Prana::CLI
             puts "#{index}. #{clothing.name}" #lists all of the clothings
             
         end
+
     end
-    # def product_description
-    # puts "Product Description"
-    #     @product.each do |product|
-    #         puts "#{product.name}"
-    #     end
-    
-
-
     def collect_clothing
         chosen_number = gets.strip.to_i
         show_clothing(chosen_number) if valid_input(chosen_number, @clothing) #taking from the show_clothing method
@@ -50,10 +43,14 @@ class Prana::CLI
         puts "#{user_chosen_clothing.price}"
 
         Prana::Scraper.scrapes_product_description(user_chosen_clothing) #scrape product det.
-        
-        puts ""
-    end
+        puts "Product description:"
 
+        user_chosen_clothing.description.each.with_index(1) do |clothing,index| 
+        
+            puts clothing
+        end
+    end
+    
     def do_next
         puts "Would you want to look at another item? y/n"
 

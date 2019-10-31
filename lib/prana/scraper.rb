@@ -14,10 +14,13 @@ class Prana::Scraper
          end
     end
     def self.scrapes_product_description(user_chosen_clothing)     
-      binding.pry 
       html = open("https://www.prana.com#{user_chosen_clothing.url}")
-      doc = Nokogiri::HTML(html)
+      doc = Nokogiri::HTML(html)      
       product = doc.css("div.product__details__description li")
-      products.each do |clothes|
+
+      product.each do |descriptions|        
+         user_chosen_clothing.description << descriptions.children.text
       end
+      
    end
+end
