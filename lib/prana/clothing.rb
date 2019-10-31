@@ -16,7 +16,7 @@ class Prana::Clothing
         @@all
     end
 
-    ## testing , is this working?
+
 
 end
 
