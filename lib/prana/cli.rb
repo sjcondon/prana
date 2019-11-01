@@ -38,7 +38,7 @@ class Prana::CLI
 
     def show_clothing(chosen_number)
         user_chosen_clothing = @clothing[chosen_number -1]
-        binding.pry
+        
         puts "Here is your clothing for the #{user_chosen_clothing.name}..."
         puts "#{user_chosen_clothing.price}"
 
